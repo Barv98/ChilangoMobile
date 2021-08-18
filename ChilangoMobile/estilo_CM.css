@@ -1,0 +1,49 @@
+.encabezado{
+	color: black ;
+	text-align: center;
+}
+
+.encabezadoD{
+	text-align: center;
+	font-size: small;
+	color: blck;
+}
+
+.centrarI{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;	
+}
+
+.centrarF{
+	text-align: center;
+
+}
+.centrarT{
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.textoP{
+	color: black;
+	text-align: center;
+	font-size: x-large;
+	font-style: italic;
+	display: block;
+	font-size: 30px;
+
+}
+
+.logo{
+	color: #0833A2;
+	background-color: #FFFFFF;
+	text-align: center;
+}
+
+.mar{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}

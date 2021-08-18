@@ -1,0 +1,428 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="icon" href="ChilangoMobileB.png" type="image/png" />
+	<link rel="StyleSheet" href="estilo_CM.css" type="text/css"/>
+	<title>Inicio</title>
+	<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+           integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+           crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+           integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+           crossorigin=""></script>
+</head>
+<style>
+	.txts{
+		 
+	  width: 20%;
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 4px;
+	  box-sizing: border-box;
+
+	}
+		.mar{
+		display: block;
+		margin-left: auto;
+  		margin-right: auto;
+	}
+	.butn {
+	  background-color: #5C8FAC;
+	  border: none;
+	  color: white;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+	  margin: 4px 2px;
+	  cursor: pointer;
+	  font-family: "Lucida Console";
+	}
+	@font-face {
+   		font-family: fuente1;
+  		src: url("American Signs.otf") format("opentype");
+	}
+
+	@font-face {
+   		font-family: fuente2;
+  		src: url("Qualy Bold.ttf") format('truetype');
+	}
+
+@font-face {
+   		font-family: fuente3;
+  		src: url("CreatoDisplay-regular.otf") format('truetype');
+	}
+	@font-face {
+   		font-family: fuente4;
+  		src: url("Sono-Medium.ttf") format('truetype');
+	}
+
+	.logo{
+		font-family: "fuente1";
+
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.mar{
+		display: block;
+		margin-left: auto;
+  		margin-right: auto;
+	}
+	.textoPt{
+
+  		font-family: "fuente2";
+	}
+	.textoPt2{
+
+  		font-family: "fuente4";
+  		color: white;
+	}
+
+	.imag{
+		width: 50%; 
+		height: 50%;
+		display: block;
+  		margin-left: auto;
+  		margin-right: auto;
+	}
+	.imag2{
+		width: 50%; 
+		height: 50%;
+		display: block;
+  		margin-left: auto;
+  		margin-right: auto;
+	}
+	.encabezado{
+		font-family: "fuente2";
+		font-size: 50px;
+	}
+</style>
+<!-- Función datos() para mostrar los datos que desea enviar el usuario para conocer la ruta que más le conviene al usuario-->
+<script>
+	function mdatos() {
+		pago_ind=document.getElementById("pago").selectedIndex;
+		var hor= document.getElementsByName("HORARIO");
+		var horaF;
+		for (i=0; i < hor.length;i++){
+			if(hor[i].checked){
+				var hora = i; 
+			}
+		}
+		if(hora == 0)
+			horaF = "Matutino";
+		if(hora == 1)
+			horaF = "Vespertino";
+		if(hora == 2)
+			horaF = "Nocturno";
+		alert("                 DATOS REGISTRADOS            \n"
+			  +
+			  "\nLugar de inicio:  "+ document.getElementById("inicio").value 	
+			  +	
+			  "\nLugar de destino:  "+ document.getElementById("fin").value
+			  +
+			  "\nHorario:  "+ horaF
+			  +
+			  "\nForma de pago:  "+ document.getElementById("pago").options[pago_ind].value
+			)
+	}
+</script>
+<!--Style de logotipo y eslogan de ChilangoMobile-->
+
+
+<body id="page-top">
+	<!--Logotipo y eslogan de ChilangoMobile-->
+ 
+<div class="logo"><br>
+		<img class="mar" src="ChilangoMobileB.png" alt="Logotipo" width="85" height="100"><br>
+		<big class="CMSlogan"><big><i><strong>Chilango Mobile la web que llegó a tiempo para que estés a tiempo.</strong></i></big></big></div>
+	<hr>
+	<div style="background-color: #83E187;">
+	<br><br>
+	<h1 class="encabezado">Inicio</h1>
+		<!-- Asignación del form para colocar lugar de inicio, lugar de destino, horario y forma de pago. Los botones con cada una de sus funciones-->
+		<form class="centrarF" name="f3" action="base_chilango.php" method="post">
+			<p class="textoPt">
+			Lugar de inicio:&nbsp&nbsp&nbsp&nbsp<input type="text" class="txts" id="inicio" name="INICIO" readonly="">&nbsp
+			<button type="button" class="butn" id="valSal">Seleccionar</button><br/><br/>
+			Lugar de destino: <input type="text" class="txts" id="fin" name="FIN" readonly="">&nbsp
+			<button type="button" class="butn" id="valLleg">Seleccionar</button>
+			<!--<button type="button" id="Limpiar">Limpiar</button>-->
+			<div  id="respuesta" style="color: black;" ></div><br/>
+			<p class="textoPt">Horario de preferencia:&nbsp&nbsp<br> <br> Matutino<input type="radio" id="matutino" name="HORARIO" value="MATUTINO"> Vespertino<input type="radio" id="vespertino" name="HORARIO" value="VESPERTINO"> Nocturno<input type="radio" id="nocturno" name="HORARIO" value="NOCTURNO"> </p> <br>
+			<p class="textoPt">
+			Forma de pago:&nbsp&nbsp<select type="text" id="pago" name="PAGO">
+				<option class= "textoPt">...</option>
+				<option class= "textoPt">Tarjeta de crédito</option>
+				<option class= "textoPt">Tarjeta de débito</option>
+				<option class= "textoPt">PayPal</option>
+				<option class= "textoPt">Efectivo</option>
+			</select><br><br></p>
+
+			<input class="butn" type="submit" value="Enviar" name="b1" id="B1">
+			<input class="butn" type="button" value="Datos Registrados" name="b2" id="B2" onClick="mdatos();">
+			<input class="butn" type="reset" value="Borrar" name="b3" id="B3"> <br>
+			<br>	
+			</p>
+		</form>
+		<div class="col-lg-6 col-lg-4 mb-5">
+                <div class="centrarI" id="mapid" style="width: 600px; height: 400px;"></div>
+       
+              
+</div>
+
+
+	<br><br><br><br><br><br><br>
+	 </div>
+		<div style="background-color: #83BBE1;">
+	<hr>
+
+	<br><br><br><br><br><br><br>
+	<h1 class="encabezado"> Costos Transporte </h1>
+		<!--Muestra la tabla con las opciones de transporte de la CDMX-->
+		<div class="textoPt2"><table class="centrarT" border="1" bgcolor="#42A2E3">
+			<thead>
+				<tr>
+					<th>Transporte</th>
+					<th>Costo unitario</th>
+					<th>Imagen</th>
+	<th>-----</th>
+					<th>Transporte</th>
+					<th>Costo unitario</th>
+					<th>Imagen</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Metro</td>
+					<td>$5 pesos</td>
+					<td><img src="metro.jpeg" alt="Metro" height=200 width=250></td>
+	<th></th>
+					<td>Autobús</td>
+					<td>$7 pesos</td>
+					<td><img src="autobús.jpg" alt="Autobús" height=200 width=250></td>
+
+					
+				</tr>
+				<tr>
+					<td>Taxi</td>
+					<td>Variable</td>
+					<td><img src="taxi.jpeg" alt="Taxi" height=200 width=250></td>
+	<th></th>
+					<td>Bicicleta</td>
+					<td>$112 pesos/día</td>
+					<td><img src="bicicleta.jpg" alt="Bicicleta" height=200 width=250></td>
+				</tr>
+				<tr>
+					<td>Metrobús</td>
+					<td>$6 pesos</td>
+					<td><img src="metrobús.jpg" alt="Metrobús" height=200 width=250></td>
+	<th></th>
+					<td>Trolebús</td>
+					<td>$5 pesos</td>
+					<td><img src="trolebús.jpg" alt="Trolebús" height=200 width=250></td>
+				</tr>
+				<tr>
+					<td>Cablebús</td>
+					<td>$7 pesos</td>
+					<td><img src="cablebús.jpg" alt="Cablebús" height=200 width=250></td>
+				</tr>
+			</tbody>
+		</table></div>
+	<br><br><br><br><br><br><br>
+</div>
+              
+	<!--Link de retorno a pagina home.html-->
+	<img class="centrarI" src="regreso.png" alt="HOME" width="50" height="60" usemap="#home">
+	<map name="home">
+		<area shape="circle" coords="25,25,25" href="home.html" name="Sitio"/>
+	</map>
+	
+	<hr>
+<script>
+  //-----------------------------------------------------------------------------------
+  //--------------------------------Comienza el script---------------------------------
+  //-----------------------------------------------------------------------------------
+  
+  
+ 
+
+  var mymap = L.map('mapid').setView([19.3567, -99.133634],11);
+
+  var puntosel;
+  console.log(puntosel);
+
+   var numdatos = 3;
+
+  var datos=[
+    [19.325817, -99.181917,"FI"],
+    [19.425127, -99.186133,"MNAH"],
+    [19.292505, -99.061721,"CASA"]
+
+  ]; 
+
+
+  var marc=[];
+
+  const  $respuesta = document.querySelector("#respuesta");
+
+  var sal_lleg=true; 
+
+  var tmp; 
+
+  //Etiqueta html
+
+
+  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+    maxZoom: 18,
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+      'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    doubleClickZoom: "false"
+  }).addTo(mymap);
+  //--------------------Tabla de datos---------------------------------------
+  //Estructura[lat, long, nombre, dist: casa, dist:MNA, dist:Escuela]
+ 
+
+
+  //------------------------Marcadores-----------------------------------
+  
+
+  for (var i = 0; i < numdatos; i++) {
+      //añadir marcador
+      marc[i]=L.marker([datos[i][0],datos[i][1]]).bindPopup("<b>"+datos[i][2]);
+  };
+
+
+  marc.forEach(recmarc);
+
+  function recmarc(item,index) {
+     marc[index].addTo(mymap);
+  };
+    
+  //---------------------Fin creacion marcadores---------------------------  
+    
+
+    //marc[1].setOpacity(0.5);
+    //marc[1].setPopupContent("Seleccionado");
+    //getContent()
+    //remove();
+ 
+  
+    marc[0].on('dblclick',  function(e) {
+        puntosel=0;
+        if(sal_lleg== true){
+          document.getElementById("inicio").value =  datos[0][2];
+        }
+        else{
+          document.getElementById("fin").value =  datos[0][2];
+        }
+        marc[0].setOpacity(0.5);
+        marc[1].setOpacity(1.0);
+        marc[2].setOpacity(1.0);
+
+        
+        marc[0].setPopupContent("Seleccionado");
+        marc[1].setPopupContent(datos[1][2]);
+        marc[2].setPopupContent(datos[2][2]);
+      });
+
+     marc[1].on('dblclick',  function(e) {
+        puntosel=1;
+        if(sal_lleg== true){
+          document.getElementById("inicio").value =  datos[1][2];
+        }
+        else{
+          document.getElementById("fin").value =  datos[1][2];
+        }
+        marc[0].setOpacity(1.0);
+        marc[1].setOpacity(0.5);
+        marc[2].setOpacity(1.0);
+
+        
+        marc[0].setPopupContent(datos[0][2]);
+        marc[1].setPopupContent("Seleccionado");
+        marc[2].setPopupContent(datos[2][2]);
+      });
+
+
+     marc[2].on('dblclick',  function(e) {
+        puntosel=2;
+        if(sal_lleg== true){
+          document.getElementById("inicio").value =  datos[2][2];
+        }
+        else{
+          document.getElementById("fin").value =  datos[2][2];
+        }
+        marc[0].setOpacity(1.0);
+        marc[1].setOpacity(1.0);
+        marc[2].setOpacity(0.5);
+
+        
+        marc[0].setPopupContent(datos[0][2]);
+        marc[1].setPopupContent(datos[1][2]);
+        marc[2].setPopupContent("Seleccionado");
+      });
+
+
+     function modifyText() {
+        
+        if(puntosel==null){
+              console.log(puntosel);
+              alert("Seleciona un punto" );
+            }  
+        else if(sal_lleg==true){
+              console.log(puntosel);
+              $respuesta.textContent = "Punto de partida selecionado" 
+              sal_lleg=false;
+              tmp=puntosel;
+              console.log("tmp"+tmp);
+              puntosel=null;
+              //Enviar datos a PHP salida
+            } 
+         else if(tmp==puntosel){
+                    console.log(puntosel);
+                    sal_lleg=false;
+                    puntosel=null;
+                    $respuesta.textContent = "Los puntos seleccionados no pueden ser iguales."
+        }
+        else{
+                    $respuesta.textContent = "Punto de llegada selecionado" ;
+                    //alert("Buscando tu viaje");
+                    //enviar datos a PHP llegada
+        }
+
+      }; 
+
+      function Limpiarfun() { 
+        document.getElementById("inicio").value =  " ";
+        document.getElementById("fin").value =  " ";
+        puntosel=null;
+        sal_lleg=true;
+      }; 
+
+      
+    var button_sal = document.getElementById("valSal");   
+    button_sal.addEventListener("click",modifyText, false);   
+
+    var button_Lleg = document.getElementById("valLleg");   
+    button_Lleg.addEventListener("click",modifyText, false);  
+
+    var button_Limp = document.getElementById("Limpiar");   
+    button_Limp.addEventListener("click",Limpiarfun, false);   
+  //-----------------------------------------------------------------------------------
+  //--------------------------------Acaba el script---------------------------------
+  //-----------------------------------------------------------------------------------
+
+</script>
+ 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+</html>

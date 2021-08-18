@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="icon" href="ChilangoMobileB.png" type="image/png" />
+	<link href="./estilo_CM.css" rel="stylesheet"  type="text/css">
+	<title>Chilango Mobile</title>
+</head>
+<style type="text/css">
+@font-face {
+   		font-family: fuente1;
+  		src: url("American Signs.otf") format("opentype");
+	}
+@font-face {
+   		font-family: fuente2;
+  		src: url("CreatoDisplay-Thin.otf") format("opentype");
+}
+	@font-face {
+   		font-family: fuente3;
+  		src: url("Qualy Bold.ttf") format('truetype');
+	}
+
+.telch {
+  list-style-image: url('telefonoch.png');
+}
+
+.corch {
+  list-style-image: url('correoch.png');
+}
+
+.mapch {
+  list-style-image: url('mapach.png');
+}
+.logo{
+	background-color: #BCDDE3;
+	text-align: center;
+}
+
+.nw{
+	font-weight: bold;
+}
+
+.butn {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-family: "Lucida Console";
+}
+
+.textoP{
+	margin-left: 250px;
+  	margin-right: 250px;
+  		font-family: "fuente2";
+}
+
+.butn2 {
+  background-color: #F58562;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-family: "Lucida Console";
+}
+
+.CMSlogan {
+  font-family: "fuente1";
+  color: black;
+}
+
+.orgilista{
+	margin-left: 250px;
+  margin-right: 250px;
+  font-size: 20px;
+  font-family: "fuente2";
+}
+.encabezado{
+	font-size: 30px;
+	font-family:fuente3 ;
+}
+
+</style>
+
+<body >
+	<!--Logotipo y eslogan de ChilangoMobile-->
+	<div class="logo"><br>
+		<img class="mar" src="ChilangoMobileB.png" alt="Logotipo" width="85" height="100"><br>
+		<big class="CMSlogan"><big><i><strong>Chilango Mobile la web que llegó a tiempo para que estés a tiempo.</strong></i></big></big>
+	<br>
+	<audio class="centrarI" controls="controls" autoplay="autoplay" loop="loop">
+		<source src="musica-de-fondo-para-videos-y-presentaciones-corporativas-i-deeper-por-e-soundtrax.mp3" type="audio/mp3"/> 
+	</audio>
+	<br>
+	<br>
+	<br>
+	</div>
+	<br>
+	<!-- Asignación del form para los botones con cada una de los links(dentro y fuera de la página) que serán dirigidos al momento de dar click-->
+		<form class="centrarF" name="f1">
+			<button class="butn" formaction="#1">Nosotros</button>
+			<button class="butn" formaction="#2">Organigrama</button>
+			<button class="butn" formaction="Misión_Visión.html">Misión y Visión</button>
+			<button class="butn" formaction="Servicios.html">Servicios</button>
+			<button class="butn" formaction="Contacto.html">Contacto</button>
+			<button class="butn" formaction="Redes.html">Redes Sociales</button>
+			<button class="butn" formaction="Reportes.html">Reportes</button>
+			<br><br>
+			<button class="butn2" type="submit" formaction="Transporte.html">Rutas de Transporte</button>
+		</form>
+		<br>
+		<!--Imagen con área definida en el centro para concectarte con la página de la función principal del sitio web(Transporte.html)-->
+		<img class="centrarI" src="ChilangoMobileB.jpg" alt="LogotipoChilangoMobile" width="300" height="400" usemap="#RutasChilango">
+		<map name="RutasChilango">
+			<area shape="circle" coords="146,203,95" href="Transporte.html" name="Org"/>
+		</map>
+	<p class="textoP"><strong>¡DA UN CLICK EN EL CENTRO DE LA IMAGEN Y CONOCENOS!</strong></p>
+	<br><br><br><br><br><br><br>
+	<a id="1"><hr></a>
+
+	<!--Información sobre ChilangoMobile-->
+	<div style="background-color: #BCDDE3 ;">
+	<br><br><br><br><br><br><br>
+	<h2 class="encabezado">Nosotros</h2>
+	
+		<p class="textoP">Empresa enfocada en la recopilación de información de cada unidad de transporte público dentro de la Ciudad de México con el fin de optimizar el tiempo de desplazamiento de un punto a otro por medio de rutas personalizadas.</p>
+		<!--Reproducción de archivo multimedia(video)-->
+		<video class="centrarI" autoplay="autoplay" loop="loop" src="CHILANGO_MOBILE.mp4" width="800" height="800" controls="controls"></video>
+		
+	<a id="2"><hr></a>
+	<!--Organigrama de la empresa-->
+	</div>
+	<div style="background-color: #C4E3BC ;">
+	<br><br><br><br><br><br><br>
+	
+	
+	<h2 class="encabezado">Organigrama</h2>
+
+		<ul class="orgilista">
+			<li class="nw">Rodrigo García- Chief Marketing Officer</li>
+				<ul><br>
+					<li class="telch">Contacto: 111111111</li>
+					<li class="corch">Correo: rodrigo.garcia@chilangomobile.com</li>
+					<li class="mapch">Ubicación: oficina #2</li>
+				</ul><br>
+			<li class="nw">Brandon Ramirez- Chief Operations Officer</li>
+				<ul><br>
+					<li class="telch">Contacto: 222222222</li>
+					<li class="corch">Correo: brandon.ramirez@chilangomobile.com</li>
+					<li class="mapch">Ubicación: oficina #4</li>
+				</ul><br>
+			<li class="nw">Daniel Rodríguez- Chief Information Officer</li>
+				<ul><br>
+					<li class="telch">Contacto: 333333333</li>
+					<li class="corch">Correo: daniel.rodriguez@chilangomobile.com</li>
+					<li class="mapch">Ubicación: oficina #6</li>
+				</ul><br>
+			<li class="nw">Ricardo Vargas- Chief Technology Officer</li>		
+				<ul><br>
+					<li class="telch">Contacto: 444444444</li>
+					<li class="corch">Correo: ricardo.vargas@chilangomobile.com</li>
+					<li class="mapch">Ubicación: oficina #8</li>
+				</ul><br>
+		</ul>
+	
+	<br><br><br><br><br><br><br>
+	</div>	
+	<hr>
+	<br><br>	
+		<!--Link al inicio de la página-->
+		<a href="home.html"><h2 class="encabezadoD">Página Principal Chilango Mobile: home.html</h2></a>
+	
+	<br><br>	
+</body>
+</html>

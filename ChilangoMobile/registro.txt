@@ -1,0 +1,17 @@
+Fecha:2021-08-12 05:56:13 Inicio:CASA  Fin:FI   Costo:3    Forma de pago:Tarjeta de crédito
+Fecha:2021-08-12 05:58:26 Inicio:CASA  Fin:MNAH   Costo:19    Forma de pago:Tarjeta de crédito
+Fecha:2021-08-16 07:11:18 Inicio:CASA  Fin:MNAH   Costo:19    Forma de pago:Tarjeta de crédito
+Fecha:2021-08-16 07:24:00 Inicio:CASA  Fin:MNAH   Costo:19    Forma de pago:Tarjeta de débito
+Fecha:2021-08-16 07:55:58 Inicio:CASA  Fin:MNAH   Costo:19    Forma de pago:Tarjeta de crédito
+Fecha:2021-08-16 08:20:19 Inicio:CASA  Fin:MNAH   Costo:19    Forma de pago:Tarjeta de crédito
+Fecha:2021-08-16 08:31:26 Inicio:CASA  Fin:MNAH   Costo:19    Forma de pago:Tarjeta de crédito
+Fecha:2021-08-16 11:31:39 Inicio:CASA  Fin:MNAH   Costo:19    Forma de pago:Tarjeta de crédito
+Fecha:2021-08-16 11:42:56 Inicio:MNAH  Fin:CASA   Costo:20    Forma de pago:Tarjeta de débito
+Fecha:2021-08-16 11:48:05 Inicio:MNAH  Fin:FI   Costo:12    Forma de pago:Efectivo
+Fecha:2021-08-16 11:49:12 Inicio:MNAH  Fin:FI   Costo:12    Forma de pago:Efectivo
+Fecha:2021-08-16 11:52:03 Inicio:MNAH  Fin:FI   Costo:12    Forma de pago:PayPal
+Fecha:2021-08-16 11:52:43 Inicio:MNAH  Fin:FI   Costo:12    Forma de pago:PayPal
+Fecha:2021-08-17 01:47:39 Inicio:MNAH  Fin:FI   Costo:12    Forma de pago:Efectivo
+Fecha:2021-08-17 03:09:15 Inicio:CASA  Fin:FI   Costo:3    Forma de pago:Tarjeta de débito
+Fecha:2021-08-17 12:10:07 Inicio:CASA  Fin:MNAH   Costo:19    Forma de pago:Tarjeta de crédito
+Fecha:2021-08-17 12:44:12 Inicio:MNAH  Fin:CASA   Costo:20    Forma de pago:PayPal
